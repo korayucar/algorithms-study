@@ -48,4 +48,25 @@ public class MaximumSubarrayTest {
         assertEquals(res[1],4);
         assertEquals(res[2],77);
     }
+
+    @Test
+    public void findMaximumSubArrayByLinearSearch() throws Exception {
+
+        MaximumSubarray maximumSubarray = new MaximumSubarray();
+        int [] arr = new int [] {4,5,-3,9,62,0,0,-6,-23,9,1,8,7};
+        int  res =maximumSubarray.findMaximumSubArrayByLinearSearch(arr);
+        System.out.println(res);
+        assertEquals(res,77);
+    }
+
+
+    @Test
+    public void findMaximumSubArrayByLinearSearch2() throws Exception {
+
+        MaximumSubarray maximumSubarray = new MaximumSubarray();
+        int [] arr = new int [] {4,5,-3,9,62,0,3,-6,-23,9,1,8,12};
+        int  res =maximumSubarray.findMaximumSubArrayByLinearSearch(arr);
+        System.out.println(res);
+        assertEquals(res,81);
+    }
 }

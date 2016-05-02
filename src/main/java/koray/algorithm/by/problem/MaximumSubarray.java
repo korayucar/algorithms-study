@@ -1,9 +1,28 @@
 package koray.algorithm.by.problem;
 
 /**
+ * Solving the maximum subarray problem https://en.wikipedia.org/wiki/Maximum_subarray_problem
  * Created by koray2 on 5/2/16.
  */
+
 public class MaximumSubarray {
+
+
+    /**
+     * Kadenes algorithm for solving maximum subarray problem
+     * runs in linear time.
+     * @param arr
+     * @return maximum subarray sum
+     */
+    public int findMaximumSubArrayByLinearSearch (int [] arr){
+        int max_ending_here = 0 , max_so_far = 0;
+        for (int i :arr){
+            max_ending_here = Math.max(0 , max_ending_here + i);
+            max_so_far = Math.max(max_so_far , max_ending_here);
+        }
+        return max_so_far;
+
+    }
 
     /**
      *
@@ -14,7 +33,7 @@ public class MaximumSubarray {
      * @return int [] of length 3 the beginning index of the max subarray, the end index of the max subarray
      *          and the sum of max subarray
      */
-    int[] findMaximumSubArrayByDivideAndConquer(int [] A , int low, int high){
+    public int[] findMaximumSubArrayByDivideAndConquer(int [] A , int low, int high){
         if(high == low) // when there is only one element left to consider
             return new int[]{low , high , A[low]};
         int mid = (low+high) / 2;
